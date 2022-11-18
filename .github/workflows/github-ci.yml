@@ -13,12 +13,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - name: Install xmllint
+        run: sudo apt-get install -y libxml2-utils
       - name: Install Nodejs
-      - name: nodejs Install
-        run:  sudo apt-get install nodejs -y
-      - name: node version
+        run: sudo apt-get install nodejs -y
+      - name: nodejs version
         run: nodejs -v
-      - name: npm install
-        run: sudo apt-get  install npm  -y
-      - name: npm version
-        run: npm -v
