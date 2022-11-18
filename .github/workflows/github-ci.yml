@@ -14,6 +14,9 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Install Nodejs
-        run: sudo apt-get install nodejs -y
-
-
+      - name: docker version
+        run: |
+              sudo apt-get install nodejs -y
+              nodejs -v
+              sudo apt-get  install npm  -y
+              npm -v
