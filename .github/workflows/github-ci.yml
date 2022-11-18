@@ -12,18 +12,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Install xmllint
-        run: sudo apt-get install -y libxml2-utils
-      - name: Install Nodejs
-        run: sudo apt-get install nodejs -y
-      - name: nodejs version
-        run: nodejs -v
-      - name: npm install
-        run: sudo apt-get  install npm  -y
-      - name: npm version
-        run: npm -v
-      - name: Install dependencies
-        run: npm install
-      - name: Application Build
-        run: npm run build
+      - uses: actions/checkout@master
+      - name: node js and npm installations
+        run: |
+          sudo apt-get install nodejs -y
+          sudo apt-get  install npm  -y
+          npm -v
+      - name: application build
+        run: |
+           npm install
+           npm run build
+           
+       
+        
