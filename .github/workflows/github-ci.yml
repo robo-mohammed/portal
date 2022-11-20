@@ -2,9 +2,7 @@ name: CI-PORTAL
 
 on:
   push:
-    branches: [ master ]
-  pull_request:
-    branches: [ "master" ]
+    branches: [ feature/yaser ]
 
 jobs:
   build:
@@ -21,17 +19,11 @@ jobs:
       - name: application build
         run: |
            npm install
-           npm run build
-           ls -lrt build/
-      - name: docker image build
-        run: |
-           docker build -t yasernoaman/portal-build:01 .
-           docker images
-      - name: docker login to image registry
-        run: docker login -u ${{ secrets.dockerhubusername }} -p ${{ secrets.dockerhubpassword }}
-      - name: docker image push into registry
-        run: docker push yasernoaman/portal-build:01 
-           
+      - name: Run linters
+        uses: wearerequired/lint-action@v2
+        with:
+          eslint: true
+          prettier: true        
        
        
         
