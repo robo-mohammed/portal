@@ -15,6 +15,7 @@
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
+    "lint": "react-scripts lint"
     "start": "react-scripts start",
     "build": "BUILD_PATH='./dist' react-scripts build",
     "test": "react-scripts test",
