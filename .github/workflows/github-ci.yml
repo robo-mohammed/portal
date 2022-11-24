@@ -26,7 +26,11 @@ jobs:
         uses: wearerequired/lint-action@v1
         with:
           # Enable linters
-          eslint: true      
+          eslint: true
+      - name: Build The Application
+        run: npm run build
+          
+          
            
        
        
