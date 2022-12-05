@@ -2,8 +2,7 @@ name: CI-PORTAL
 on:
   pull_request:
     types: [ opened ]
-    branches: [ "master" ]
-
+    branches: [ "develop" ]
 jobs:
   build:
 
@@ -29,15 +28,11 @@ jobs:
           eslint: true
       - name: Build The Application
         run: npm run build
-      - name: Generate build number
-        uses: einaregilsson/build-number@v3
-        with:
-          token: ${{secrets.github_token}}        
-      - name: docker image build
-        run: |
-           docker build -t yasernoaman/portal-build:$BUILD_NUMBER .
-           docker images
-      - name: docker login to image registry
-        run: docker login -u ${{ secrets.dockerhubusername }} -p ${{ secrets.dockerhubpassword }}
-      - name: docker image push into registry
-        run: docker push yasernoaman/portal-build:$BUILD_NUMBER        
+
+        
+          
+          
+           
+       
+       
+        
