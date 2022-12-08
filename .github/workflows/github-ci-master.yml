@@ -1,7 +1,6 @@
 name: CI-PORTAL
 on:
-  pull_request:
-    types: [ opened ]
+  push:
     branches: [ "master" ]
 
 jobs:
