@@ -1,6 +1,7 @@
 name: CI-PORTAL
 on:
-  push
+  push:
+    branches: [ "develop" ]
 jobs:
   build:
 
